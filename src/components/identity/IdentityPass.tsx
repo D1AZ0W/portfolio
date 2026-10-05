@@ -1,12 +1,27 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowDownRight, MapPin, ScanLine } from 'lucide-react'
 import { profile, specialtyStack } from '../../data/portfolio'
 import { Reveal } from '../animation/Reveal'
 
+function useCompactLayout() {
+  const [compact, setCompact] = useState(false)
+
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 760px)')
+    const sync = () => setCompact(query.matches)
+    sync()
+    query.addEventListener('change', sync)
+    return () => query.removeEventListener('change', sync)
+  }, [])
+
+  return compact
+}
+
 export function IdentityPass() {
   const scene = useRef<HTMLElement>(null)
   const reduceMotion = useReducedMotion()
+  const compact = useCompactLayout()
   const { scrollYProgress } = useScroll({
     target: scene,
     offset: ['start end', 'end start'],
@@ -16,7 +31,11 @@ export function IdentityPass() {
   const scale = useTransform(scrollYProgress, [0.05, 0.36, 0.72, 0.95], [0.94, 1, 1.04, 1.08])
   const radius = useTransform(scrollYProgress, [0.28, 0.78], ['18px', '2px'])
   const frameOpacity = useTransform(scrollYProgress, [0.38, 0.72], [1, 0.18])
-  const portraitWidth = useTransform(scrollYProgress, [0.04, 0.38, 0.8], ['34%', '43%', '49%'])
+  const portraitWidth = useTransform(
+    scrollYProgress,
+    [0.04, 0.38, 0.8],
+    compact ? ['42%', '44%', '46%'] : ['34%', '37%', '40%'],
+  )
   const metadataX = useTransform(scrollYProgress, [0.08, 0.45], [0, -18])
   const metadataOpacity = useTransform(scrollYProgress, [0.46, 0.77], [1, 0.26])
 
@@ -35,8 +54,8 @@ export function IdentityPass() {
           </div>
           <div className="id-card-main">
             <motion.div className="portrait-slot" style={reduceMotion ? undefined : { width: portraitWidth }}>
-              <img className="portrait-placeholder-image" src="/portrait-placeholder.svg" alt="Abstract portrait placeholder; replace with Ansh’s own portrait when supplied." />
-              <span className="portrait-label">PHOTO PLACEHOLDER</span>
+              <img className="portrait-photo" src="/portrait/ansh.jpg" alt="Portrait of Ansh Shrestha." width={1000} height={1250} fetchPriority="high" />
+              <span className="portrait-label">PORTRAIT / ANSH</span>
               <span className="portrait-corner portrait-corner--tl" />
               <span className="portrait-corner portrait-corner--br" />
             </motion.div>

@@ -100,7 +100,7 @@ function ScreenshotReel({ project }: { project: Project }) {
 
   return (
     <figure
-      className="project-figure"
+      className={`project-figure ${project.frame === 'tall' ? 'project-figure--tall' : ''}`}
       onPointerEnter={() => setEngaged(true)}
       onPointerLeave={() => setEngaged(false)}
       onFocusCapture={() => setEngaged(true)}
@@ -114,7 +114,7 @@ function ScreenshotReel({ project }: { project: Project }) {
       }}
     >
       <TiltedProjectFrame>
-        <div className="project-screen">
+        <div className={`project-screen ${project.frame === 'tall' ? 'project-screen--tall' : ''}`}>
           <div className="screen-chrome"><span /><span /><span /><small>ansh.dev / work / {project.number}</small><i>×</i></div>
           {current ? (
             <AnimatePresence mode="wait" initial={false}>
@@ -151,7 +151,7 @@ function ScreenshotReel({ project }: { project: Project }) {
         </div>
       </TiltedProjectFrame>
       <figcaption className="visual-figcaption">
-        <span>{hasScreenshots ? current?.caption ?? 'Project screenshot' : 'Visual placeholder · replace with project screenshot'}</span>
+        <span>{hasScreenshots ? current?.caption ?? 'Project screenshot' : 'Conceptual visual · screenshots pending'}</span>
         {hasScreenshots && slides.length > 1 && <span className="reel-state">AUTO SEQUENCE / {autoplayActive ? 'PLAYING' : 'PAUSED'}</span>}
       </figcaption>
     </figure>
@@ -190,7 +190,7 @@ export function Projects() {
         <h2 id="projects-title">Made to<br /><em>do the work.</em></h2>
         <p>Five projects from the CV. No vanity metrics—just the decisions and systems behind each build.</p>
       </div>
-      <div className="projects-index"><span>CASE STUDIES / 05</span><span>SCREENSHOTS: PLACEHOLDERS UNTIL PROVIDED</span></div>
+      <div className="projects-index"><span>CASE STUDIES / 05</span><span>SCREENSHOT REELS / 05 — APP SCREENS ON RECORD</span></div>
       <div className="project-list">
         {projects.map((project, index) => (
           <Reveal key={project.number} delay={index < 2 ? 0.02 : 0}>

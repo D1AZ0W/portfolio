@@ -124,9 +124,9 @@ img { display: block; max-width: 100%; }
 .id-card-mark { display: inline-flex; align-items: center; gap: 7px; }
 .id-card-mark svg { color: var(--acid); }
 .id-card-main { position: relative; z-index: 1; display: flex; align-items: center; gap: clamp(20px, 5vw, 56px); padding: 27px 22px 31px; }
-.portrait-slot { position: relative; display: grid; min-height: clamp(230px, 32vw, 330px); flex: 0 0 auto; place-items: center; border: 1px solid rgba(199, 255, 67, 0.28); background: radial-gradient(ellipse at 47% 29%, rgba(199, 255, 67, 0.1), transparent 43%), repeating-linear-gradient(0deg, transparent, transparent 34px, rgba(199, 255, 67, 0.035) 35px), #0a0d0a; overflow: hidden; }
+.portrait-slot { position: relative; display: grid; min-height: clamp(300px, 38vw, 430px); flex: 0 0 auto; place-items: center; border: 1px solid rgba(199, 255, 67, 0.28); background: radial-gradient(ellipse at 47% 29%, rgba(199, 255, 67, 0.1), transparent 43%), repeating-linear-gradient(0deg, transparent, transparent 34px, rgba(199, 255, 67, 0.035) 35px), #0a0d0a; overflow: hidden; }
 .portrait-slot::before { position: absolute; inset: 0; background: linear-gradient(140deg, transparent 45%, rgba(199, 255, 67, 0.06)); content: ""; }
-.portrait-placeholder-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.94; }
+.portrait-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .portrait-slot::before { z-index: 1; }
 .portrait-label { position: absolute; right: 8px; bottom: 8px; color: var(--muted-dim); font-size: 7px; letter-spacing: 0.1em; }
 .portrait-corner { position: absolute; z-index: 1; width: 12px; height: 12px; border-color: var(--acid); border-style: solid; }
@@ -211,13 +211,15 @@ img { display: block; max-width: 100%; }
 .project-figure { margin: 0; }
 .tilted-card { transform-style: preserve-3d; will-change: transform; }
 .project-screen { position: relative; aspect-ratio: 1.26; min-height: 270px; border: 1px solid rgba(199, 255, 67, 0.22); background: #0b0e0b; box-shadow: 0 28px 85px rgba(0, 0, 0, 0.33); overflow: hidden; }
+.project-screen--tall { width: auto; height: min(70svh, 620px); max-width: 100%; aspect-ratio: 0.45; margin-inline: auto; }
+.project-figure--tall .visual-figcaption { width: 100%; max-width: 300px; margin-inline: auto; }
 .screen-chrome { position: absolute; z-index: 5; top: 0; right: 0; left: 0; display: flex; align-items: center; gap: 5px; height: 34px; padding: 0 11px; border-bottom: 1px solid rgba(199, 255, 67, 0.12); background: rgba(10, 13, 10, 0.94); color: var(--muted-dim); font-size: 7px; letter-spacing: 0.05em; }
 .screen-chrome > span { width: 5px; height: 5px; border: 1px solid var(--muted-dim); border-radius: 50%; }
 .screen-chrome small { margin-left: 7px; font: inherit; }
 .screen-chrome > i { margin-left: auto; color: var(--muted-dim); font: normal 15px var(--display); }
-.project-screenshot { position: absolute; inset: 34px 0 0; background: var(--panel); }
-.project-screenshot img { width: 100%; height: 100%; object-fit: cover; }
-.screenshot-caption { position: absolute; right: 10px; bottom: 10px; padding: 5px 7px; background: rgba(8, 10, 8, 0.82); color: var(--paper); font-size: 7px; letter-spacing: 0.08em; }
+.project-screenshot { position: absolute; inset: 34px 0 0; display: grid; padding: 10px; background: radial-gradient(ellipse at 50% 34%, rgba(199, 255, 67, 0.055), transparent 58%), repeating-linear-gradient(0deg, transparent, transparent 31px, rgba(199, 255, 67, 0.028) 32px), #070907; place-items: center; }
+.project-screenshot img { width: 100%; height: 100%; object-fit: contain; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.42); }
+.screenshot-caption { position: absolute; left: 10px; bottom: 10px; max-width: 60%; padding: 5px 7px; background: rgba(8, 10, 8, 0.82); color: var(--paper); font-size: 7px; letter-spacing: 0.08em; }
 .visual-placeholder { position: absolute; inset: 34px 0 0; display: flex; flex-direction: column; overflow: hidden; background: #0b0f0b; }
 .placeholder-windowbar { display: flex; align-items: center; gap: 5px; height: 28px; padding: 0 12px; border-bottom: 1px solid rgba(199, 255, 67, 0.11); color: var(--muted-dim); font: 7px var(--mono); }
 .placeholder-windowbar > span { width: 5px; height: 5px; border: 1px solid #596257; border-radius: 50%; }
@@ -409,7 +411,7 @@ img { display: block; max-width: 100%; }
   .id-card-top, .id-card-bottom { font-size: 6px; }
   .id-card-mark { gap: 4px; }
   .id-card-main { gap: 12px; padding: 28px 8px 27px; }
-  .portrait-slot { min-height: clamp(195px, 56vw, 270px); }
+  .portrait-slot { min-height: clamp(230px, 64vw, 320px); }
   .portrait-label { font-size: 5px; }
   .id-card-meta h2 { margin: 12px 0 8px; font-size: clamp(27px, 8vw, 42px); }
   .id-card-meta > p { font-size: 9px; }
@@ -449,6 +451,8 @@ img { display: block; max-width: 100%; }
   .project-stack { gap: 6px 9px; font-size: 7px; }
   .project-stack span + span::before { margin-right: 6px; }
   .project-screen { min-height: 210px; aspect-ratio: 1.1; }
+  .project-screen--tall { height: min(64svh, 540px); aspect-ratio: 0.45; }
+  .project-figure--tall .visual-figcaption { max-width: 100%; }
   .placeholder-art { padding: 19px; }
   .placeholder-art-label { font-size: 24px; }
   .placeholder-art-grid span { padding: 6px; font-size: 6px; }
@@ -499,6 +503,7 @@ img { display: block; max-width: 100%; }
   .skill-name { font-size: 10px; }
   .skill-signal { gap: 4px; font-size: 6px; }
   .project-screen { min-height: 185px; }
+  .project-screen--tall { height: min(58svh, 470px); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
