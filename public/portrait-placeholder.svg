@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" fill="none">
+  <rect width="720" height="900" fill="#0A0D0A"/>
+  <path d="M0 100h720M0 200h720M0 300h720M0 400h720M0 500h720M0 600h720M0 700h720M0 800h720M90 0v900M180 0v900M270 0v900M360 0v900M450 0v900M540 0v900M630 0v900" stroke="#C7FF43" stroke-opacity=".045"/>
+  <circle cx="360" cy="360" r="225" stroke="#C7FF43" stroke-opacity=".18"/>
+  <circle cx="360" cy="360" r="182" stroke="#C7FF43" stroke-opacity=".14" stroke-dasharray="3 12"/>
+  <path d="M360 259c-54 0-98 44-98 98s44 98 98 98 98-44 98-98-44-98-98-98Z" stroke="#C7FF43" stroke-opacity=".58" stroke-width="2"/>
+  <path d="M178 725c16-104 91-172 182-172s166 68 182 172" stroke="#C7FF43" stroke-opacity=".47" stroke-width="2"/>
+  <path d="M115 116h54M115 116v54M605 784h-54M605 784v-54" stroke="#C7FF43" stroke-width="2"/>
+  <path d="M75 746h90M555 154h90" stroke="#C7FF43" stroke-opacity=".35"/>
+  <text x="49" y="70" fill="#C7FF43" font-family="monospace" font-size="14" letter-spacing="3">FIELD ID / AS-26</text>
+  <text x="49" y="850" fill="#C7FF43" font-family="monospace" font-size="13" letter-spacing="2">PORTRAIT PLACEHOLDER</text>
+  <text x="576" y="850" fill="#8D9790" font-family="monospace" font-size="11">NEPAL</text>
+  <text x="319" y="388" fill="#EEF1E9" fill-opacity=".8" font-family="sans-serif" font-size="44" font-weight="600" letter-spacing="-5">AS/</text>
+</svg>
