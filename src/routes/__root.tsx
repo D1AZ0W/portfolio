@@ -7,7 +7,37 @@ import {
 } from '@tanstack/react-router'
 import appCss from '../styles/globals.css?url'
 
+function NotFound() {
+  return (
+    <main
+      className="section-wrap"
+      style={{
+        minHeight: '100svh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        gap: '1rem',
+      }}
+    >
+      <h1
+        style={{
+          fontSize: 'clamp(48px, 8vw, 96px)',
+          margin: 0,
+          letterSpacing: '-0.08em',
+          fontFamily: 'var(--mono)',
+        }}
+      >
+        404
+      </h1>
+      <p style={{ color: 'var(--muted)' }}>Page not found</p>
+    </main>
+  )
+}
+
 export const Route = createRootRoute({
+  notFoundComponent: NotFound,
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
@@ -16,9 +46,26 @@ export const Route = createRootRoute({
       {
         name: 'description',
         content:
-          'The portfolio of Ansh Shrestha — full-stack developer building considered interfaces and reliable software.',
+          'Full-stack developer specializing in React, TypeScript, Django REST Framework and Python. Portfolio showcasing projects, skills and experience.',
       },
       { name: 'theme-color', content: '#080a08' },
+      { property: 'og:title', content: 'Ansh Shrestha — Full-Stack Developer' },
+      {
+        property: 'og:description',
+        content:
+          'Full-stack developer specializing in React, TypeScript, Django REST Framework and Python. Portfolio showcasing projects, skills and experience.',
+      },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:image', content: '/favicon.svg' },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:title', content: 'Ansh Shrestha — Full-Stack Developer' },
+      {
+        name: 'twitter:description',
+        content:
+          'Full-stack developer specializing in React, TypeScript, Django REST Framework and Python. Portfolio showcasing projects, skills and experience.',
+      },
+      { name: 'keywords', content: 'Ansh Shrestha, full-stack developer, React, TypeScript, Django REST, Python, portfolio' },
+      { name: 'author', content: 'Ansh Shrestha' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },

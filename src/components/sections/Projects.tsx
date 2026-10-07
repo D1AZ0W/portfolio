@@ -126,7 +126,13 @@ function ScreenshotReel({ project }: { project: Project }) {
                 exit={reduceMotion ? undefined : { opacity: 0, clipPath: 'inset(0% 100% 0% 0%)', scale: 0.985 }}
                 transition={{ duration: reduceMotion ? 0 : 0.52, ease: [0.22, 1, 0.36, 1] }}
               >
-                <img src={current.src} alt={current.alt} loading="lazy" />
+                <img
+                  src={current.src}
+                  alt={current.alt}
+                  loading="lazy"
+                  decoding="async"
+                  onLoad={() => {}}
+                />
                 <span className="screenshot-caption">{current.caption ?? `PROJECT ${project.number} / SCREEN ${String(active + 1).padStart(2, '0')}`}</span>
               </motion.div>
             </AnimatePresence>
@@ -134,10 +140,20 @@ function ScreenshotReel({ project }: { project: Project }) {
             <VisualPlaceholder project={project} />
           )}
           {hasScreenshots && slides.length > 1 && (
-            <div className="reel-controls" aria-label={`${project.title} screenshot carousel controls`}>
-              <button type="button" aria-label="Previous screenshot" onClick={() => move(-1)}><ArrowLeft size={15} /></button>
-              <span aria-live="polite" aria-atomic="true">{String(active + 1).padStart(2, '0')} <i>/</i> {String(slides.length).padStart(2, '0')}</span>
-              <button type="button" aria-label="Next screenshot" onClick={() => move(1)}><ArrowRight size={15} /></button>
+            <div
+              className="reel-controls"
+              role="group"
+              aria-label={`${project.title} screenshot carousel controls`}
+            >
+              <button type="button" aria-label="Previous screenshot" onClick={() => move(-1)}>
+                <ArrowLeft size={15} />
+              </button>
+              <span aria-live="polite" aria-atomic="true">
+                {String(active + 1).padStart(2, '0')} <i>/</i> {String(slides.length).padStart(2, '0')}
+              </span>
+              <button type="button" aria-label="Next screenshot" onClick={() => move(1)}>
+                <ArrowRight size={15} />
+              </button>
               <button
                 type="button"
                 aria-label={reduceMotion ? 'Automatic screenshots disabled by reduced-motion preference' : autoplayActive ? 'Pause automatic screenshots' : 'Resume automatic screenshots'}

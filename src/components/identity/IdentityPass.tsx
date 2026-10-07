@@ -54,7 +54,16 @@ export function IdentityPass() {
           </div>
           <div className="id-card-main">
             <motion.div className="portrait-slot" style={reduceMotion ? undefined : { width: portraitWidth }}>
-              <img className="portrait-photo" src="/portrait/ansh.jpg" alt="Portrait of Ansh Shrestha." width={1000} height={1500} fetchPriority="high" />
+              <img
+                className="portrait-photo"
+                src="/portrait/ansh.jpg"
+                alt="Portrait of Ansh Shrestha."
+                width={1000}
+                height={1500}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
+              />
               <span className="portrait-label">PORTRAIT / ANSH</span>
               <span className="portrait-corner portrait-corner--tl" />
               <span className="portrait-corner portrait-corner--br" />

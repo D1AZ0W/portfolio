@@ -101,11 +101,15 @@ export function DottedSphere() {
     let rafId: number
     const frame = () => {
       if (!drag) {
-        vx *= 0.96
-        vy *= 0.96
-        // spins by default, eases to a stop while the pointer is over it
-        if (!hover && !reduceMotion) {
-          vy += (AUTO - vy) * 0.04
+        if (hover && !reduceMotion) {
+          vx *= 0.97
+          vy *= 0.97
+        } else if (!reduceMotion) {
+          vx *= 0.9995
+          vy = 0.004
+        } else {
+          vx = 0
+          vy = 0
         }
         ay += vy
         ax += vx
@@ -157,13 +161,16 @@ export function DottedSphere() {
   return (
     <canvas
       ref={canvasRef}
+      aria-label="Animated 3D dotted sphere background decoration"
+      role="img"
+      tabIndex={-1}
       style={{
         position: 'absolute',
         top: '57%',
         right: '3%',
         transform: 'translateY(-50%)',
-        width: 'min(92vw, 580px)',         // was min(86vw, 520px)
-        height: 'min(92vw, 580px)',  
+        width: 'min(92vw, 580px)',
+        height: 'min(92vw, 580px)',
         cursor: 'grab',
         touchAction: 'none',
         pointerEvents: 'auto',

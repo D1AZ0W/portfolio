@@ -34,7 +34,7 @@ export const profile = {
   github: 'https://github.com/D1AZ0W',
   summary:
     'Full-stack developer specializing in React and TypeScript on the frontend and Python with Django REST Framework on the backend, with working knowledge of the Node.js and JavaScript ecosystem. Comfortable specifying features, translating design files into test pages quickly, and owning problems independently.',
-  resume: '/manus-storage/Ansh_Shrestha_CV_42a5d826.pdf',
+  resume: '/Ansh_Shrestha_CV.pdf',
 } as const
 
 export const specialtyStack = ['React', 'TypeScript', 'Django REST', 'PostgreSQL']
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     contribution:
       'Designed and built the multi-role transit app under hackathon time constraints.',
     stack: ['React Native', 'Expo', 'TypeScript', 'Expo Router'],
-    repo: 'https://github.com/D1AZ0W',
+    repo: 'https://github.com/D1AZ0W/yatra-Hackathon',
     visual: 'yatra',
     frame: 'tall',
     screenshots: [
