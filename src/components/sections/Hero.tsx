@@ -6,6 +6,7 @@ import gsap from 'gsap'
 import { profile, specialtyStack } from '../../data/portfolio'
 import { TechMark } from '../ui/TechMark'
 import { SplitText } from '../animation/SplitText'
+import { DottedSphere } from '../animation/DottedSphere'
 
 function GitHubMark() {
   return (
@@ -38,12 +39,15 @@ export function Hero() {
 
   return (
     <section className="hero section-wrap" id="top" ref={root} aria-labelledby="hero-title">
-      <div className="hero-index micro-label"><span>PORTFOLIO / 2026</span><span>01 — 09</span></div>
+      <DottedSphere />
+      <div className="hero-index micro-label"><span>PORTFOLIO / 2026</span><span>01 — 06</span></div>
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="eyebrow hero-secondary"><span className="eyebrow-line" /> Full-stack developer <span className="eyebrow-place">— Kathmandu, Nepal</span></p>
-          <SplitText text="ANSH" id="hero-title" className="hero-name hero-name--first" />
-          <div className="hero-name-row">
+          <div style={{ userSelect: 'none', WebkitUserSelect: 'none' }}>
+            <SplitText text="ANSH" id="hero-title" className="hero-name hero-name--first" />
+          </div>
+          <div className="hero-name-row" style={{ userSelect: 'none', WebkitUserSelect: 'none' }}>
             <SplitText text="SHRESTHA" className="hero-name hero-name--last" />
           </div>
           <div className="hero-meta hero-secondary">
@@ -62,13 +66,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-        <div className="hero-side hero-secondary" aria-label="Developer focus">
-          <span className="side-index">/ FIELD NOTES</span>
-          <p>Interface to<br />infrastructure.</p>
-          <div className="side-rule" />
-          <span className="side-stack">REACT <i>×</i> TYPESCRIPT<br />PYTHON <i>×</i> DJANGO REST</span>
-          <div className="orbit-mark" aria-hidden="true"><b /><i /><em /></div>
-        </div>
+        
       </div>
       <a className="scroll-cue" href="#identity">
         <span className="scroll-cue-line" /> <span>Scroll to explore</span> <ArrowDownRight size={14} />

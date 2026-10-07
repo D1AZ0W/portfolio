@@ -18,6 +18,7 @@
   --page-width: 1340px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --dot: 199, 255, 67;
 }
 
 * { box-sizing: border-box; }
@@ -59,15 +60,13 @@ img { display: block; max-width: 100%; }
 
 /* Hero */
 .hero { position: relative; display: flex; min-height: 100svh; flex-direction: column; justify-content: center; padding-top: 112px; padding-bottom: 56px; overflow: hidden; }
-.hero::before { position: absolute; top: 18%; right: 15%; width: min(44vw, 580px); height: min(44vw, 580px); border: 1px solid rgba(199, 255, 67, 0.055); border-radius: 50%; content: ""; pointer-events: none; }
-.hero::after { position: absolute; top: 30%; right: 23%; width: min(28vw, 370px); height: min(28vw, 370px); border: 1px solid rgba(199, 255, 67, 0.045); border-radius: 50%; content: ""; pointer-events: none; }
 .hero-index { display: flex; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line-soft); color: var(--muted-dim); font: 10px var(--mono); letter-spacing: 0.09em; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 54px; align-items: end; padding-top: 46px; }
 .hero-copy { min-width: 0; position: relative; z-index: 1; }
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 26px; color: var(--muted); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
 .eyebrow-line { width: 28px; height: 1px; background: var(--acid); }
 .eyebrow-place { color: var(--muted-dim); }
-.hero-name { margin: 0; color: var(--paper); font-size: clamp(84px, 11.2vw, 166px); font-weight: 600; line-height: 0.88; letter-spacing: -0.065em; text-transform: uppercase; white-space: nowrap; }
+.hero-name { margin: 0; color: var(--paper); font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace; font-size: clamp(84px, 11.2vw, 166px); font-weight: 600; line-height: 0.88; letter-spacing: -0.065em; text-transform: uppercase; white-space: nowrap; }
 .hero-name--first { width: fit-content; }
 .hero-name-row { display: flex; align-items: flex-start; gap: clamp(14px, 2vw, 32px); }
 .hero-name--last { font-size: clamp(70px, 9.7vw, 144px); }
@@ -386,8 +385,7 @@ img { display: block; max-width: 100%; }
   .nav-availability { display: none; }
   .menu-toggle { display: grid; }
   .hero { min-height: 850px; min-height: max(100svh, 760px); padding-top: 120px; padding-bottom: 80px; }
-  .hero::before { top: 21%; right: -5%; width: 83vw; height: 83vw; }
-  .hero::after { top: 31%; right: 6%; width: 58vw; height: 58vw; }
+
   .hero-grid { display: block; padding-top: 38px; }
   .eyebrow { flex-wrap: wrap; margin-bottom: 25px; font-size: 8px; }
   .hero-name { font-size: clamp(72px, 16.4vw, 124px); }

@@ -24,7 +24,7 @@ export function Contact() {
   return (
     <>
       <section className="contact-section section-wrap" id="contact" aria-labelledby="contact-title">
-        <div className="section-kicker"><span>08 / CONTACT</span><span>KATHMANDU, NEPAL</span></div>
+        <div className="section-kicker"><span>06 / CONTACT</span><span>KATHMANDU, NEPAL</span></div>
         <div className="contact-intro">
           <Reveal><p className="micro-label">HAVE A PROBLEM WORTH SOLVING?</p></Reveal>
           <Reveal delay={0.05}><h2 id="contact-title">Let’s make<br /><em>it work.</em></h2></Reveal>

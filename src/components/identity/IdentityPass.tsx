@@ -41,7 +41,7 @@ export function IdentityPass() {
 
   return (
     <section className="identity-scene section-wrap" id="identity" ref={scene} aria-labelledby="identity-title">
-      <div className="section-kicker"><span>01 / IDENTITY</span><span>FIELD ID — AS/26</span></div>
+      <div className="section-kicker"><span>02 / IDENTITY</span><span>FIELD ID — AS/26</span></div>
       <div className="identity-sticky">
         <motion.div
           className="id-card"
