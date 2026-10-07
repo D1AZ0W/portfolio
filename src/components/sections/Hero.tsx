@@ -45,7 +45,6 @@ export function Hero() {
           <SplitText text="ANSH" id="hero-title" className="hero-name hero-name--first" />
           <div className="hero-name-row">
             <SplitText text="SHRESTHA" className="hero-name hero-name--last" />
-            <span className="hero-asterisk" aria-hidden="true">✳</span>
           </div>
           <div className="hero-meta hero-secondary">
             <span className="role-label">{profile.role}</span>

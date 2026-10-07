@@ -2,17 +2,19 @@
 
 ## Status
 
-Real screenshots are now wired in for four of the five case studies. Yatra still has no screenshots, so it keeps its clearly labeled conceptual placeholder.
+Real screenshots are wired in for all five case studies, so no project renders the conceptual placeholder any more.
 
-| Project | Slug | Screens |
-| --- | --- | --- |
-| BillDiv | `public/project-screenshots/billdiv/` | 6 |
-| Helmet Detection & Fine Management | `public/project-screenshots/helmet-detection/` | 6 |
-| OnlineCom | `public/project-screenshots/onlinecom/` | 4 |
-| Pokémon Versus | `public/project-screenshots/pokemon-versus/` | 2 |
-| Yatra | — | 0 (placeholder) |
+| Project | Slug | Screens | Source |
+| --- | --- | --- | --- |
+| BillDiv | `public/project-screenshots/billdiv/` | 6 | `~/Pictures/BillDiv/` |
+| Helmet Detection & Fine Management | `public/project-screenshots/helmet-detection/` | 6 | `~/Pictures/HelmDetect/` |
+| Yatra | `public/project-screenshots/yatra/` | 7 | frames from `~/Pictures/yatra.mp4` |
+| OnlineCom | `public/project-screenshots/onlinecom/` | 4 | `~/Pictures/OnlineCom/` |
+| Pokémon Versus | `public/project-screenshots/pokemon-versus/` | 2 | `~/Pictures/Pokemon-Versus/` |
 
-Files are WebP, stripped of metadata, capped at 1600px on the long edge, and named `<order>-<slug>.webp`. The portrait is `public/portrait/ansh.jpg` (1000×1250, cropped 4:5 top-aligned from `~/Pictures/Ansh.jpg`).
+Files are WebP, stripped of metadata, and named `<order>-<slug>.webp` so display order stays stable. The portrait is `public/portrait/ansh.jpg` (1000×1500, a light 2:3 top-aligned crop of `~/Pictures/Ansh.jpg` — 84% of the original height).
+
+The Yatra frames are phone captures, so they are cropped out of the 1920×1080 screen recording to the device screen only (`crop=487:1080:716:0`) and never re-laid-out. Yatra is marked `frame: 'tall'` in `portfolio.ts`, which renders its reel in a 0.45 device-shaped frame instead of the 1.26 landscape frame used for desktop screenshots.
 
 ## Behavior
 
@@ -34,6 +36,13 @@ At two or more screenshots a project visual rotates every 5.2 seconds. Hover, fo
 
 ```bash
 magick 4.png -resize "1600x1600>" -strip -quality 82 public/project-screenshots/<slug>/04-name.webp
+```
+
+More frames can be pulled from the Yatra recording the same way:
+
+```bash
+ffmpeg -ss 44 -i ~/Pictures/yatra.mp4 -frames:v 1 -vf "crop=487:1080:716:0" -y frame.png
+magick frame.png -strip -quality 84 public/project-screenshots/yatra/08-name.webp
 ```
 
 Use genuine product screenshots only. The site does not infer or invent screen content, and a project without a `screenshots` entry renders the labeled conceptual placeholder instead.

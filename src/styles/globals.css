@@ -58,7 +58,7 @@ img { display: block; max-width: 100%; }
 .menu-toggle { display: none; width: 38px; height: 38px; padding: 0; border: 1px solid var(--line); background: transparent; place-items: center; cursor: pointer; }
 
 /* Hero */
-.hero { position: relative; display: flex; min-height: 100svh; flex-direction: column; justify-content: center; padding-top: 138px; padding-bottom: 75px; overflow: hidden; }
+.hero { position: relative; display: flex; min-height: 100svh; flex-direction: column; justify-content: center; padding-top: 112px; padding-bottom: 56px; overflow: hidden; }
 .hero::before { position: absolute; top: 18%; right: 15%; width: min(44vw, 580px); height: min(44vw, 580px); border: 1px solid rgba(199, 255, 67, 0.055); border-radius: 50%; content: ""; pointer-events: none; }
 .hero::after { position: absolute; top: 30%; right: 23%; width: min(28vw, 370px); height: min(28vw, 370px); border: 1px solid rgba(199, 255, 67, 0.045); border-radius: 50%; content: ""; pointer-events: none; }
 .hero-index { display: flex; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid var(--line-soft); color: var(--muted-dim); font: 10px var(--mono); letter-spacing: 0.09em; }
@@ -67,15 +67,15 @@ img { display: block; max-width: 100%; }
 .eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 26px; color: var(--muted); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
 .eyebrow-line { width: 28px; height: 1px; background: var(--acid); }
 .eyebrow-place { color: var(--muted-dim); }
-.hero-name { margin: 0; color: var(--paper); font-size: clamp(84px, 11.2vw, 166px); font-weight: 600; line-height: 0.79; letter-spacing: -0.105em; text-transform: uppercase; white-space: nowrap; }
+.hero-name { margin: 0; color: var(--paper); font-size: clamp(84px, 11.2vw, 166px); font-weight: 600; line-height: 0.88; letter-spacing: -0.065em; text-transform: uppercase; white-space: nowrap; }
 .hero-name--first { width: fit-content; }
 .hero-name-row { display: flex; align-items: flex-start; gap: clamp(14px, 2vw, 32px); }
 .hero-name--last { font-size: clamp(70px, 9.7vw, 144px); }
-.split-line { display: inline-flex; overflow: hidden; padding-bottom: 0.12em; }
+.split-line { display: inline-flex; overflow: hidden; padding-bottom: 0.1em; }
 .split-char-wrap { display: inline-block; overflow: hidden; }
 .split-char { display: inline-block; transform-origin: 50% 100%; }
 .hero-asterisk { margin-top: 0.13em; color: var(--acid); font-size: clamp(21px, 2.5vw, 37px); line-height: 1; }
-.hero-meta { display: flex; align-items: center; gap: 21px; margin-top: 31px; font: 11px var(--mono); letter-spacing: 0.025em; }
+.hero-meta { display: flex; align-items: center; gap: 21px; margin-top: 36px; font: 11px var(--mono); letter-spacing: 0.025em; }
 .role-label { color: var(--paper); }
 .hero-location { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .hero-location svg { color: var(--acid); }
