@@ -1,3 +1,4 @@
+import netlify from '@netlify/vite-plugin-tanstack-start'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
@@ -9,5 +10,5 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
   },
-  plugins: [tailwindcss(), tanstackStart(), react()],
+  plugins: [netlify(), tailwindcss(), tanstackStart(), react()],
 })
