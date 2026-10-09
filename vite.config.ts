@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
+const isNetlifyDev = process.env.NETLIFY === 'true'
+
 export default defineConfig({
   ssr: {
     noExternal: ['gsap', '@gsap/react'],
@@ -13,5 +15,10 @@ export default defineConfig({
     port: 3000,
     strictPort: true,
   },
-  plugins: [netlify(), tailwindcss(), tanstackStart(), react()],
+  plugins: [
+    ...(isNetlifyDev ? [netlify()] : []),
+    tailwindcss(),
+    tanstackStart(),
+    react(),
+  ],
 })

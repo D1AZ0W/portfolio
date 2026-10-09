@@ -6,6 +6,7 @@ import {
   Scripts,
 } from '@tanstack/react-router'
 import appCss from '../styles/globals.css?url'
+import LightRays from '../components/animation/LightRays'
 
 function NotFound() {
   return (
@@ -96,6 +97,31 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
       </head>
       <body>
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            pointerEvents: 'none',
+            zIndex: 0,
+            opacity: 0.4,
+            mixBlendMode: 'screen',
+          }}
+        >
+          <LightRays
+            raysOrigin="top-center"
+            raysColor="#c7ff43"
+            raysSpeed={0.6}
+            lightSpread={0.8}
+            rayLength={1.5}
+            followMouse={true}
+            mouseInfluence={0.08}
+            noiseAmount={0.05}
+            distortion={0.03}
+            fadeDistance={1.0}
+          />
+        </div>
         {children}
         <Scripts />
       </body>
