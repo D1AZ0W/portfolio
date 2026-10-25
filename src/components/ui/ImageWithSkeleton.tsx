@@ -17,7 +17,7 @@ export function ImageWithSkeleton({
     <div className={`relative ${className}`}>
       {!loaded && (
         <div
-          className="absolute inset-0 animate-pulse bg-[rgba(199,255,67,0.08)]"
+          className="absolute inset-0 animate-pulse bg-[rgba(114,149,200,0.08)]"
           aria-hidden="true"
         />
       )}

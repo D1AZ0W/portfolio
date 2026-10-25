@@ -26,7 +26,7 @@ export function IdentityPass() {
             width="min(1080px, 100%)"
             height={500}
             radius={10}
-            tint="#c7ff43"
+            tint="#7295c8"
             metalness={0.68}
             roughness={0.34}
             blurStrength={7}

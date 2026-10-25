@@ -7,27 +7,27 @@ import './ReflectiveCard.css';
 
 const THEMES = {
   dark: {
-    '--rc-base': '#1d1c22',
-    '--rc-shadow': '0 22px 44px -20px rgba(0, 0, 0, 0.8), 0 6px 16px -8px rgba(0, 0, 0, 0.5)',
-    '--rc-ink': '#f4f4f5',
-    '--rc-muted': 'rgba(244, 244, 245, 0.6)',
-    '--rc-tile': 'linear-gradient(180deg, #3a3644 0%, #27242f 100%)',
-    '--rc-tile-edge': 'rgba(255, 255, 255, 0.07)',
-    '--rc-tile-highlight': 'rgba(255, 255, 255, 0.12)',
-    '--rc-tile-shadow': '0 4px 10px -4px rgba(0, 0, 0, 0.7)',
-    '--rc-rim': 'rgba(255, 255, 255, 0.07)',
-    '--rc-rim-highlight': 'rgba(255, 255, 255, 0.1)'
+    '--rc-base': '#1A2638',
+    '--rc-shadow': '0 22px 44px -20px rgba(0, 0, 0, 0.55), 0 6px 16px -8px rgba(0, 0, 0, 0.35)',
+    '--rc-ink': '#E9EDF3',
+    '--rc-muted': 'rgba(137, 147, 164, 0.82)',
+    '--rc-tile': 'linear-gradient(180deg, #344257 0%, #1A2638 100%)',
+    '--rc-tile-edge': 'rgba(233, 237, 243, 0.07)',
+    '--rc-tile-highlight': 'rgba(233, 237, 243, 0.12)',
+    '--rc-tile-shadow': '0 4px 10px -4px rgba(0, 0, 0, 0.45)',
+    '--rc-rim': 'rgba(233, 237, 243, 0.07)',
+    '--rc-rim-highlight': 'rgba(233, 237, 243, 0.1)'
   },
   light: {
-    '--rc-base': '#e7e7ea',
-    '--rc-shadow': '0 22px 44px -22px rgba(24, 24, 27, 0.3), 0 6px 16px -10px rgba(24, 24, 27, 0.16)',
-    '--rc-ink': '#18181b',
-    '--rc-muted': 'rgba(24, 24, 27, 0.6)',
-    '--rc-tile': 'linear-gradient(180deg, #ffffff 0%, #f6f6f8 100%)',
-    '--rc-tile-edge': 'rgba(24, 24, 27, 0.08)',
+    '--rc-base': '#E9EDF3',
+    '--rc-shadow': '0 22px 44px -22px rgba(17, 24, 39, 0.3), 0 6px 16px -10px rgba(17, 24, 39, 0.16)',
+    '--rc-ink': '#111827',
+    '--rc-muted': 'rgba(137, 147, 164, 0.9)',
+    '--rc-tile': 'linear-gradient(180deg, #FFFFFF 0%, #E9EDF3 100%)',
+    '--rc-tile-edge': 'rgba(17, 24, 39, 0.08)',
     '--rc-tile-highlight': 'rgba(255, 255, 255, 1)',
-    '--rc-tile-shadow': '0 4px 10px -5px rgba(24, 24, 27, 0.25)',
-    '--rc-rim': 'rgba(24, 24, 27, 0.08)',
+    '--rc-tile-shadow': '0 4px 10px -5px rgba(17, 24, 39, 0.25)',
+    '--rc-rim': 'rgba(17, 24, 39, 0.08)',
     '--rc-rim-highlight': 'rgba(255, 255, 255, 0.8)'
   }
 };
@@ -553,7 +553,7 @@ const ReflectiveCard = ({
   role = 'Senior Developer',
   badge = 'Verified',
   status = 'Active',
-  statusColor = '#22c55e',
+  statusColor = '#7295C8',
   idLabel = 'ID number',
   idValue = '8901 2345 6789',
   children,
@@ -561,7 +561,7 @@ const ReflectiveCard = ({
   videoSrc,
   webcam = false,
   onWebcamError,
-  tint = '#ffffff',
+  tint = '#E9EDF3',
   metalness = 1,
   roughness = 0.3,
   blurStrength = 6,

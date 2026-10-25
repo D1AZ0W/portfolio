@@ -25,7 +25,7 @@ export type Project = {
 
 export const profile = {
   name: 'Ansh Shrestha',
-  role: 'Junior Full Stack Developer',
+  role: 'Full Stack Developer',
   location: 'Kathmandu, Nepal',
   email: 'anshshrestha15@gmail.com',
   phone: '+977-9841996266',

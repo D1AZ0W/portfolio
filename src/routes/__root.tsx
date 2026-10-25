@@ -49,7 +49,7 @@ export const Route = createRootRoute({
         content:
           'Full-stack developer specializing in React, TypeScript, Django REST Framework and Python. Portfolio showcasing projects, skills and experience.',
       },
-      { name: 'theme-color', content: '#080a08' },
+      { name: 'theme-color', content: '#111827' },
       { property: 'og:title', content: 'Ansh Shrestha — Full-Stack Developer' },
       {
         property: 'og:description',
@@ -111,7 +111,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         >
           <LightRays
             raysOrigin="top-center"
-            raysColor="#c7ff43"
+            raysColor="#7295c8"
             raysSpeed={0.6}
             lightSpread={0.8}
             rayLength={1.5}
