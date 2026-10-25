@@ -8,10 +8,9 @@ export function Experience() {
 
   return (
     <section className="journey-section section-wrap" id="journey" aria-labelledby="journey-title">
-      <div className="section-kicker"><span>05 / JOURNEY</span><span>SELECTED EXPERIENCE</span></div>
       <div className="section-heading journey-heading">
         <h2 id="journey-title">A little<br /><em>context.</em></h2>
-        <p>Roles, learning, and the systems I’ve worked across—drawn directly from the CV.</p>
+        <p>Roles, learning, and the systems I’ve worked across my learning and working journey.</p>
       </div>
       <div className="timeline-layout">
         <div className="timeline-axis" aria-hidden="true"><span className="timeline-axis-label">2026</span><div className="timeline-axis-track"><motion.i initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true }} transition={{ duration: reduceMotion ? 0 : 1.15, ease: [0.22, 1, 0.36, 1] }} /></div><span className="timeline-axis-foot">NOW</span></div>

@@ -40,7 +40,7 @@ export function Contact() {
     <>
       <section className="contact-section section-wrap" id="contact" aria-labelledby="contact-title">
         <div className="section-kicker">
-          <span>06 / CONTACT</span>
+          <span>CONTACT</span>
           <span>KATHMANDU, NEPAL</span>
         </div>
         <div className="contact-intro">

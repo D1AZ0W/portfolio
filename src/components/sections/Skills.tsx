@@ -9,7 +9,6 @@ export function Skills() {
 
   return (
     <section className="skills-section section-wrap" id="skills" aria-labelledby="skills-title">
-      <div className="section-kicker"><span>03 / TOOLKIT</span><span>SELECT A DISCIPLINE</span></div>
       <div className="section-heading skills-heading">
         <h2 id="skills-title">Tools for<br /><em>the whole stack.</em></h2>
         <p>Specialties and working knowledge, grounded in project work—not a made-up score.</p>
@@ -59,7 +58,6 @@ export function Skills() {
           <div className="skill-legend"><span><i className="legend-core" /> Core focus</span><span><i /> CV-listed / used</span></div>
         </div>
       </div>
-      <p className="skills-note">No arbitrary percentages. Each signal reflects how the experience is described in the CV.</p>
     </section>
   )
 }

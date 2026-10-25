@@ -40,7 +40,6 @@ export function Hero() {
   return (
     <section className="hero section-wrap" id="top" ref={root} aria-labelledby="hero-title">
       <DottedSphere />
-      <div className="hero-index micro-label"><span>PORTFOLIO / 2026</span><span>01 — 06</span></div>
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="eyebrow hero-secondary"><span className="eyebrow-line" /> Full-stack developer <span className="eyebrow-place">— Kathmandu, Nepal</span></p>

@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { ArrowDownRight, MapPin, ScanLine } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import { profile, specialtyStack } from '../../data/portfolio'
-import { Reveal } from '../animation/Reveal'
 
 function useCompactLayout() {
   const [compact, setCompact] = useState(false)
@@ -41,17 +40,12 @@ export function IdentityPass() {
 
   return (
     <section className="identity-scene section-wrap" id="identity" ref={scene} aria-labelledby="identity-title">
-      <div className="section-kicker"><span>02 / IDENTITY</span><span>FIELD ID — AS/26</span></div>
       <div className="identity-sticky">
         <motion.div
           className="id-card"
           style={reduceMotion ? undefined : { rotate, scale, borderRadius: radius }}
         >
           <motion.div className="id-card-frame" style={reduceMotion ? undefined : { opacity: frameOpacity }} />
-          <div className="id-card-top">
-            <span className="id-card-brand"><span className="monogram monogram--small"><i />AS<span>/</span></span> DEVELOPER PASS</span>
-            <span className="id-card-mark"><ScanLine size={16} strokeWidth={1.5} /> No. 2026 / NP</span>
-          </div>
           <div className="id-card-main">
             <motion.div className="portrait-slot" style={reduceMotion ? undefined : { width: portraitWidth }}>
               <img
@@ -72,7 +66,6 @@ export function IdentityPass() {
               className="id-card-meta"
               style={reduceMotion ? undefined : { x: metadataX, opacity: metadataOpacity }}
             >
-              <span className="id-card-overline">FULL-STACK / 001</span>
               <h2 id="identity-title">Ansh<br />Shrestha</h2>
               <p>{profile.role}</p>
               <span className="id-card-location"><MapPin size={13} /> Kathmandu, Nepal</span>
@@ -84,21 +77,6 @@ export function IdentityPass() {
           <div className="id-card-bottom"><span>CSIT / TRIBHUVAN UNIVERSITY</span><span>NEPAL · 2026</span></div>
         </motion.div>
         <div className="identity-note" aria-hidden="true"><span className="identity-note-dot" /> SCROLL TO UNFRAME</div>
-      </div>
-
-      <div className="about-editorial">
-        <div className="about-label"><span>02 / ABOUT</span><span>BUILT BETWEEN LAYERS</span></div>
-        <div className="about-headline">
-          <Reveal><p className="about-lead">I work across</p></Reveal>
-          <Reveal delay={0.06}><p className="about-line"><span className="about-accent">interfaces</span> and infrastructure.</p></Reveal>
-        </div>
-        <div className="about-facts" aria-label="Specialties and working approach">
-          <Reveal><div className="about-fact"><span className="about-fact-label">SPECIALTY / FRONTEND</span><p>React + TypeScript</p></div></Reveal>
-          <Reveal delay={0.04}><div className="about-fact"><span className="about-fact-label">SPECIALTY / BACKEND</span><p>Python + Django REST Framework</p></div></Reveal>
-          <Reveal delay={0.08}><div className="about-fact"><span className="about-fact-label">WORKING KNOWLEDGE</span><p>Node.js + JavaScript ecosystem</p></div></Reveal>
-          <Reveal delay={0.12}><div className="about-fact"><span className="about-fact-label">HOW I WORK</span><p>Specify features, translate designs to test pages, own the problem</p></div></Reveal>
-        </div>
-        <div className="about-footnote"><span>01 — FRONTEND</span><span>02 — BACKEND</span><ArrowDownRight size={14} /></div>
       </div>
     </section>
   )

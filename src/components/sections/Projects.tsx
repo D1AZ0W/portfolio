@@ -201,7 +201,6 @@ function ProjectCase({ project, index }: { project: Project; index: number }) {
 export function Projects() {
   return (
     <section className="projects-section section-wrap" id="work" aria-labelledby="projects-title">
-      <div className="section-kicker"><span>04 / SELECTED WORK</span><span>BUILD → TEST → SHIP</span></div>
       <div className="section-heading projects-heading">
         <h2 id="projects-title">Made to<br /><em>do the work.</em></h2>
         <p>Five projects from the CV. No vanity metrics—just the decisions and systems behind each build.</p>
